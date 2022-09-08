@@ -1,20 +1,15 @@
 <template lang="">
   <div>
-    <h5>{{ title }}</h5>
-    <span>{{ date }}</span>
-    <div>
-      <p>{{ content }}</p>
-    </div>
+    <List v-for="blog in blogs" :key="blog.number" :blog="blog" />
   </div>
 </template>
 <script>
+import List from './List.vue';
 export default {
   name: 'ListComponent',
+  components: { List },
   props: {
-    title: String,
-    content: String,
-    date: String,
-    number: Number,
+    blogs: Array,
   },
 };
 </script>
